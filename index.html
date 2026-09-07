@@ -137,6 +137,20 @@
     .game { font-weight: 600; letter-spacing: -0.02em; }
     .sub { display: block; margin-top: 3px; color: var(--dim); font-size: 11px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; }
     .num { font-variant-numeric: tabular-nums; }
+    th.col-diff, td.col-diff {
+      padding-left: 10px;
+      padding-right: 6px;
+      white-space: normal;
+      line-height: 1.2;
+      width: 88px;
+    }
+    th.col-pick, td.col-pick {
+      padding-left: 6px;
+      padding-right: 10px;
+      white-space: normal;
+      line-height: 1.2;
+      width: 72px;
+    }
     .plus { color: var(--good); }
     .minus { color: #ff6b6b; }
     .pill {
@@ -197,8 +211,8 @@
             <tr>
               <th class="sticky">Matchup</th>
               <th>Kickoff</th>
-              <th>MODEL<br />DIFFERENTIAL</th>
-              <th>Model<br />Pick</th>
+              <th class="col-diff">MODEL<br />DIFFERENTIAL</th>
+              <th class="col-pick">Model<br />Pick</th>
               <th>Vegas<br />Pick</th>
             </tr>
           </thead>
@@ -245,8 +259,8 @@
         return `<tr>
           <td class="sticky"><div class="game">${g.away} <span style="color:#5c5c5c;font-weight:400">at</span> ${g.home}</div><span class="sub">${g.game}</span></td>
           <td><span class="sub" style="margin:0">${g.when}</span></td>
-          <td class="num minus">${fmt(diff)}</td>
-          <td><span class="pill">${g.model}</span></td>
+          <td class="num minus col-diff">${fmt(diff)}</td>
+          <td class="col-pick"><span class="pill">${g.model}</span></td>
           <td class="vegas">${vegas}</td>
         </tr>`;
       }).join("");
