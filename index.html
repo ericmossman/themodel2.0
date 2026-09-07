@@ -127,7 +127,9 @@
       z-index: 2;
       background: #0c0c0c;
       box-shadow: 8px 0 12px rgba(0,0,0,0.35);
-      min-width: 168px;
+      min-width: 128px;
+      padding-left: 8px;
+      padding-right: 8px;
     }
     td.sticky { background: #0d0d0d; }
     tbody tr:last-child td { border-bottom: none; }
@@ -165,7 +167,7 @@
       .nav { padding: 16px; }
       .swipe-hint { display: block; }
       tbody td, thead th { padding: 14px 12px; }
-      th.sticky, td.sticky { min-width: 148px; }
+      th.sticky, td.sticky { min-width: 112px; padding-left: 8px; padding-right: 8px; }
     }
   </style>
 </head>
@@ -180,9 +182,9 @@
   <section class="hero">
     <div class="kicker">2026 NFL Season · Week 1</div>
     <h1>The Model versus.<br /><em>the live board.</em></h1>
-    <p class="lede">Week 1 NFL matchups. Risk adjusted spread prediction model</p>
+    <p class="lede">Week 1 NFL matchups. Risk adjusted prediction model.</p>
     <div class="meta">
-      <div>spreads - ESPN - DRAFT KINGS</div>
+      <div>SPREADS - ESPN</div>
     </div>
   </section>
 
@@ -195,9 +197,9 @@
             <tr>
               <th class="sticky">Matchup</th>
               <th>Kickoff</th>
-              <th>Differential</th>
-              <th>Model</th>
-              <th>Vegas</th>
+              <th>MODEL<br />DIFFERENTIAL</th>
+              <th>Model<br />Pick</th>
+              <th>Vegas<br />Pick</th>
             </tr>
           </thead>
           <tbody id="rows"></tbody>
