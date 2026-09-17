@@ -127,15 +127,36 @@
       z-index: 2;
       background: #0c0c0c;
       box-shadow: 8px 0 12px rgba(0,0,0,0.35);
-      min-width: 88px;
-      max-width: 128px;
-      padding-left: 6px;
-      padding-right: 4px;
+      width: 92px;
+      min-width: 92px;
+      max-width: 92px;
+      padding-left: 8px;
+      padding-right: 8px;
+      white-space: normal;
+      overflow: hidden;
     }
     td.sticky { background: #0d0d0d; }
     tbody tr:last-child td { border-bottom: none; }
     tbody tr:hover td { background: rgba(255,255,255,0.02); }
-    .game { font-weight: 600; letter-spacing: -0.02em; }
+    tbody tr:hover td.sticky { background: #111; }
+    .game {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      font-size: 11px;
+      line-height: 1.25;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .game .at {
+      display: block;
+      color: #5c5c5c;
+      font-weight: 400;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 1px 0;
+    }
+    .game .home { display: block; }
     .sub { display: block; margin-top: 3px; color: var(--dim); font-size: 11px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; }
     .num { font-variant-numeric: tabular-nums; }
     th.col-diff, td.col-diff {
@@ -179,7 +200,8 @@
       .nav { padding: 16px; }
       .swipe-hint { display: block; }
       tbody td, thead th { padding: 14px 12px; }
-      th.sticky, td.sticky { min-width: 86px; max-width: 120px; padding-left: 6px; padding-right: 4px; }
+      th.sticky, td.sticky { width: 86px; min-width: 86px; max-width: 86px; padding-left: 8px; padding-right: 6px; }
+      .game { font-size: 10.5px; }
     }
   </style>
 </head>
@@ -255,7 +277,7 @@
         const vegas = (liveMap && liveMap[g.id]) || g.snap;
         const diff = -Math.abs(Number(g.i13));
         return `<tr>
-          <td class="sticky"><div class="game">${g.away} <span style="color:#5c5c5c;font-weight:400">at</span> ${g.home}</div><span class="sub">${g.game}</span></td>
+          <td class="sticky"><div class="game">${g.away}<span class="at">at</span><span class="home">${g.home}</span></div></td>
           <td><span class="sub" style="margin:0">${g.when}</span></td>
           <td class="num minus col-diff">${fmt(diff)}</td>
           <td class="col-pick"><span class="pill">${g.model}</span></td>
