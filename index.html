@@ -101,7 +101,7 @@
     }
     table {
       width: 100%;
-      min-width: 620px;
+      min-width: 420px;
       border-collapse: collapse;
     }
     thead th {
@@ -160,26 +160,34 @@
     .sub { display: block; margin-top: 3px; color: var(--dim); font-size: 11px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; }
     .num { font-variant-numeric: tabular-nums; }
     th.col-diff, td.col-diff {
-      padding-left: 10px;
-      padding-right: 6px;
-      white-space: normal;
+      padding-left: 6px;
+      padding-right: 4px;
+      white-space: nowrap;
       line-height: 1.2;
-      width: 88px;
+      width: 64px;
+      font-size: 12px;
     }
     th.col-pick, td.col-pick {
-      padding-left: 6px;
-      padding-right: 10px;
-      white-space: normal;
+      padding-left: 4px;
+      padding-right: 4px;
+      white-space: nowrap;
       line-height: 1.2;
+      width: 58px;
+    }
+    th.col-vegas, td.col-vegas {
+      padding-left: 4px;
+      padding-right: 10px;
+      white-space: nowrap;
       width: 72px;
+      font-size: 12px;
     }
     .minus { color: #ff6b6b; }
     .pill {
       display: inline-block;
       border: 1px solid var(--line-2);
       border-radius: 999px;
-      padding: 4px 10px;
-      font-size: 12px; letter-spacing: 0.04em;
+      padding: 3px 7px;
+      font-size: 11px; letter-spacing: 0.03em;
     }
     .vegas { font-weight: 600; letter-spacing: 0.02em; }
     .live-dot {
@@ -223,17 +231,16 @@
   </section>
 
   <div class="wrap">
-    <div class="swipe-hint">Swipe left and right for all columns</div>
+    <div class="swipe-hint">Swipe if needed</div>
     <div class="panel">
       <div class="scroller">
         <table>
           <thead>
             <tr>
               <th class="sticky">Matchup</th>
-              <th>Kickoff</th>
-              <th class="col-diff">MODEL<br />DIFFERENTIAL</th>
+              <th class="col-diff">model<br />diff.</th>
               <th class="col-pick">Model<br />Pick</th>
-              <th>Vegas<br />Pick</th>
+              <th class="col-vegas">Vegas<br />Pick</th>
             </tr>
           </thead>
           <tbody id="rows"></tbody>
@@ -278,10 +285,9 @@
         const diff = -Math.abs(Number(g.i13));
         return `<tr>
           <td class="sticky"><div class="game">${g.away}<span class="at">at</span><span class="home">${g.home}</span></div></td>
-          <td><span class="sub" style="margin:0">${g.when}</span></td>
           <td class="num minus col-diff">${fmt(diff)}</td>
           <td class="col-pick"><span class="pill">${g.model}</span></td>
-          <td class="vegas">${vegas}</td>
+          <td class="vegas col-vegas">${vegas}</td>
         </tr>`;
       }).join("");
     }
