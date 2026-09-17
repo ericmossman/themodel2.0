@@ -78,62 +78,44 @@
       color: var(--dim); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
     }
     .wrap { max-width: 1180px; margin: 0 auto; padding: 8px 24px 80px; }
-    .swipe-hint {
-      display: none;
-      color: var(--dim);
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin: 0 0 10px 2px;
-    }
+    .swipe-hint { display: none; }
     .panel {
       background: linear-gradient(180deg, #0e0e0e 0%, #090909 100%);
       border: 1px solid var(--line);
       border-radius: 16px;
       overflow: hidden;
     }
-    .scroller {
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior-x: contain;
-      touch-action: pan-x pan-y;
-    }
+    .scroller { overflow: hidden; }
     table {
       width: 100%;
-      min-width: 420px;
+      min-width: 0;
+      table-layout: fixed;
       border-collapse: collapse;
     }
     thead th {
       text-align: left;
-      font-size: 11px; font-weight: 500;
-      letter-spacing: 0.14em; text-transform: uppercase;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
       color: var(--dim);
-      padding: 16px 14px;
+      padding: 12px 6px;
       border-bottom: 1px solid var(--line);
       background: #0c0c0c;
-      white-space: nowrap;
+      white-space: normal;
+      line-height: 1.2;
     }
     tbody td {
-      padding: 16px 14px;
+      padding: 12px 6px;
       border-bottom: 1px solid var(--line);
-      font-size: 14px;
+      font-size: 13px;
       vertical-align: middle;
-      white-space: nowrap;
     }
     th.sticky, td.sticky {
-      position: sticky;
-      left: 0;
-      z-index: 2;
-      background: #0c0c0c;
-      box-shadow: 8px 0 12px rgba(0,0,0,0.35);
-      width: 92px;
-      min-width: 92px;
-      max-width: 92px;
-      padding-left: 8px;
-      padding-right: 8px;
+      width: 28%;
+      padding-left: 10px;
+      padding-right: 6px;
       white-space: normal;
       overflow: hidden;
+      background: #0c0c0c;
     }
     td.sticky { background: #0d0d0d; }
     tbody tr:last-child td { border-bottom: none; }
@@ -142,16 +124,15 @@
     .game {
       font-weight: 600;
       letter-spacing: -0.02em;
-      font-size: 11px;
-      line-height: 1.25;
+      font-size: 12px;
+      line-height: 1.2;
       white-space: normal;
-      word-break: break-word;
     }
     .game .at {
       display: block;
       color: #5c5c5c;
       font-weight: 400;
-      font-size: 9px;
+      font-size: 8px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       margin: 1px 0;
@@ -160,26 +141,27 @@
     .sub { display: block; margin-top: 3px; color: var(--dim); font-size: 11px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; }
     .num { font-variant-numeric: tabular-nums; }
     th.col-diff, td.col-diff {
-      padding-left: 6px;
-      padding-right: 4px;
+      width: 18%;
+      padding-left: 4px;
+      padding-right: 2px;
       white-space: nowrap;
       line-height: 1.2;
-      width: 64px;
       font-size: 12px;
     }
     th.col-pick, td.col-pick {
-      padding-left: 4px;
-      padding-right: 4px;
+      width: 26%;
+      padding-left: 2px;
+      padding-right: 2px;
       white-space: nowrap;
       line-height: 1.2;
-      width: 58px;
     }
     th.col-vegas, td.col-vegas {
-      padding-left: 4px;
-      padding-right: 10px;
+      width: 28%;
+      padding-left: 2px;
+      padding-right: 8px;
       white-space: nowrap;
-      width: 72px;
       font-size: 12px;
+      letter-spacing: 0;
     }
     .minus { color: #ff6b6b; }
     .pill {
@@ -204,12 +186,15 @@
     @media (max-width: 800px) {
       .hero { padding: 36px 16px 20px; }
       h1 { font-size: 34px; }
-      .wrap { padding: 8px 12px 72px; }
+      .wrap { padding: 8px 8px 72px; }
       .nav { padding: 16px; }
-      .swipe-hint { display: block; }
-      tbody td, thead th { padding: 14px 12px; }
-      th.sticky, td.sticky { width: 86px; min-width: 86px; max-width: 86px; padding-left: 8px; padding-right: 6px; }
-      .game { font-size: 10.5px; }
+      .swipe-hint { display: none; }
+      thead th { font-size: 9px; letter-spacing: 0.04em; padding: 10px 4px; }
+      tbody td { padding: 10px 4px; font-size: 12px; }
+      th.sticky, td.sticky { padding-left: 8px; padding-right: 4px; }
+      .game { font-size: 11px; }
+      .pill { padding: 2px 5px; font-size: 10px; }
+      th.col-vegas, td.col-vegas { font-size: 11px; padding-right: 6px; }
     }
   </style>
 </head>
@@ -240,7 +225,7 @@
               <th class="sticky">Matchup</th>
               <th class="col-diff">model<br />diff.</th>
               <th class="col-pick">Model<br />Pick</th>
-              <th class="col-vegas">Vegas<br />Pick</th>
+              <th class="col-vegas">Vegas</th>
             </tr>
           </thead>
           <tbody id="rows"></tbody>
