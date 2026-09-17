@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Week 1 — Model vs Vegas</title>
+  <title>Week 2 — Model vs Vegas</title>
   <meta name="robots" content="noindex" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -101,7 +101,7 @@
     }
     table {
       width: 100%;
-      min-width: 720px;
+      min-width: 620px;
       border-collapse: collapse;
     }
     thead th {
@@ -127,8 +127,8 @@
       z-index: 2;
       background: #0c0c0c;
       box-shadow: 8px 0 12px rgba(0,0,0,0.35);
-      min-width: 96px;
-      max-width: 140px;
+      min-width: 88px;
+      max-width: 128px;
       padding-left: 6px;
       padding-right: 4px;
     }
@@ -152,7 +152,6 @@
       line-height: 1.2;
       width: 72px;
     }
-    .plus { color: var(--good); }
     .minus { color: #ff6b6b; }
     .pill {
       display: inline-block;
@@ -161,9 +160,7 @@
       padding: 4px 10px;
       font-size: 12px; letter-spacing: 0.04em;
     }
-    .vegas {
-      font-weight: 600; letter-spacing: 0.02em;
-    }
+    .vegas { font-weight: 600; letter-spacing: 0.02em; }
     .live-dot {
       display: inline-block; width: 6px; height: 6px; border-radius: 50%;
       background: var(--good); margin-right: 7px;
@@ -182,22 +179,22 @@
       .nav { padding: 16px; }
       .swipe-hint { display: block; }
       tbody td, thead th { padding: 14px 12px; }
-      th.sticky, td.sticky { min-width: 92px; max-width: 132px; padding-left: 6px; padding-right: 4px; }
+      th.sticky, td.sticky { min-width: 86px; max-width: 120px; padding-left: 6px; padding-right: 4px; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="nav">
-      <div class="brand">Week One <span>/</span> Model</div>
+      <div class="brand">Week Two <span>/</span> Model</div>
       <div class="status"><span class="live-dot" id="dot"></span><b id="feed">Connecting</b> · view only</div>
     </div>
   </header>
 
   <section class="hero">
-    <div class="kicker">2026 NFL Season · Week 1</div>
+    <div class="kicker">2026 NFL Season · Week 2</div>
     <h1>The Model versus.<br /><em>the live board.</em></h1>
-    <p class="lede">Week 1 NFL matchups. Risk adjusted prediction model.</p>
+    <p class="lede">Week 2 NFL matchups. Risk adjusted prediction model.</p>
     <div class="meta">
       <div>SPREADS - ESPN</div>
     </div>
@@ -224,28 +221,28 @@
   </div>
 
   <footer>
-    View only. Model values are from the Week 1 workbook. Vegas lines refresh from ESPN when the browser can reach the public scoreboard feed; otherwise the last snapshot is shown.
+    View only. Model values are from the Week 2 workbook (I13 differential; pick is the side with the higher H11 / H13). Vegas lines refresh from ESPN when the browser can reach the public scoreboard feed; otherwise the last snapshot is shown.
     This page does not accept bets and does not store visitor data.
   </footer>
 
   <script>
     const GAMES = [
-      { id: "401872656", game: "Patriots @ Seahawks", when: "Wed 8:20 NBC", away: "Patriots", home: "Seahawks", h11: 17.60, h13: 16.66, i13: 0.93, model: "Patriots", snap: "SEA -3.5", awayAbbr: "NE", homeAbbr: "SEA" },
-      { id: "401872657", game: "49ers vs Rams", when: "Thu Netflix · Melbourne", away: "49ers", home: "Rams", h11: 15.26, h13: 21.43, i13: -6.16, model: "Rams", snap: "LAR -3.5", awayAbbr: "SF", homeAbbr: "LAR" },
-      { id: "401872661", game: "Bears @ Panthers", when: "Sun 1:00 FOX", away: "Bears", home: "Panthers", h11: 24.15, h13: 13.69, i13: 10.46, model: "Bears", snap: "CHI -2.5", awayAbbr: "CHI", homeAbbr: "CAR" },
-      { id: "401872925", game: "Buccaneers @ Bengals", when: "Sun 1:00 FOX", away: "Buccaneers", home: "Bengals", h11: 18.64, h13: 23.92, i13: -5.28, model: "Bengals", snap: "CIN -3.5", awayAbbr: "TB", homeAbbr: "CIN" },
-      { id: "401872923", game: "Saints @ Lions", when: "Sun 1:00 FOX", away: "Saints", home: "Lions", h11: 13.04, h13: 24.18, i13: -11.15, model: "Lions", snap: "DET -7.0", awayAbbr: "NO", homeAbbr: "DET" },
-      { id: "401872660", game: "Bills @ Texans", when: "Sun 1:00 CBS", away: "Bills", home: "Texans", h11: 17.59, h13: 17.67, i13: -0.08, model: "Texans", snap: "BUF -1.5", awayAbbr: "BUF", homeAbbr: "HOU" },
-      { id: "401872659", game: "Ravens @ Colts", when: "Sun 1:00 CBS", away: "Ravens", home: "Colts", h11: 21.74, h13: 24.43, i13: -2.69, model: "Colts", snap: "BAL -3.5", awayAbbr: "BAL", homeAbbr: "IND" },
-      { id: "401872922", game: "Browns @ Jaguars", when: "Sun 1:00 CBS", away: "Browns", home: "Jaguars", h11: 13.17, h13: 21.57, i13: -8.40, model: "Jaguars", snap: "JAX -7.5", awayAbbr: "CLE", homeAbbr: "JAX" },
-      { id: "401872658", game: "Falcons @ Steelers", when: "Sun 1:00 FOX", away: "Falcons", home: "Steelers", h11: 17.02, h13: 23.16, i13: -6.15, model: "Steelers", snap: "PIT -3.5", awayAbbr: "ATL", homeAbbr: "PIT" },
-      { id: "401872924", game: "Jets @ Titans", when: "Sun 1:00 CBS", away: "Jets", home: "Titans", h11: 12.35, h13: 9.53, i13: 2.82, model: "Jets", snap: "TEN -1.5", awayAbbr: "NYJ", homeAbbr: "TEN" },
-      { id: "401872926", game: "Cardinals @ Chargers", when: "Sun 4:25 CBS", away: "Cardinals", home: "Chargers", h11: 16.74, h13: 18.05, i13: -1.31, model: "Chargers", snap: "LAC -10.5", awayAbbr: "ARI", homeAbbr: "LAC" },
-      { id: "401872928", game: "Dolphins @ Raiders", when: "Sun 4:25 FOX", away: "Dolphins", home: "Raiders", h11: 17.83, h13: 8.40, i13: 9.43, model: "Dolphins", snap: "LV -3.5", awayAbbr: "MIA", homeAbbr: "LV" },
-      { id: "401872927", game: "Packers @ Vikings", when: "Sun 4:25 CBS", away: "Packers", home: "Vikings", h11: 17.16, h13: 17.81, i13: -0.66, model: "Vikings", snap: "MIN -1.5", awayAbbr: "GB", homeAbbr: "MIN" },
-      { id: "401872929", game: "Commanders @ Eagles", when: "Sun 4:25 FOX", away: "Commanders", home: "Eagles", h11: 19.12, h13: 19.71, i13: -0.59, model: "Eagles", snap: "PHI -5.5", awayAbbr: "WSH", homeAbbr: "PHI" },
-      { id: "401872930", game: "Cowboys @ Giants", when: "Sun 8:20 NBC", away: "Cowboys", home: "Giants", h11: 22.10, h13: 15.00, i13: 7.10, model: "Cowboys", snap: "DAL -2.5", awayAbbr: "DAL", homeAbbr: "NYG" },
-      { id: "401872931", game: "Broncos @ Chiefs", when: "Mon 8:15 ESPN", away: "Broncos", home: "Chiefs", h11: 15.98, h13: 11.38, i13: 4.60, model: "Broncos", snap: "KC -3.0", awayAbbr: "DEN", homeAbbr: "KC" }
+      { id: "401872932", game: "Lions @ Bills", when: "Thu 8:15 Prime", away: "Lions", home: "Bills", h11: 20.03, h13: 23.59, i13: -3.57, model: "Bills", snap: "BUF -4.5", awayAbbr: "DET", homeAbbr: "BUF" },
+      { id: "401872933", game: "Panthers @ Falcons", when: "Sun 1:00 FOX", away: "Panthers", home: "Falcons", h11: 16.26, h13: 18.77, i13: -2.50, model: "Falcons", snap: "CAR -2.5", awayAbbr: "CAR", homeAbbr: "ATL" },
+      { id: "401872937", game: "Vikings @ Bears", when: "Sun 1:00 FOX", away: "Vikings", home: "Bears", h11: 16.46, h13: 20.13, i13: -3.67, model: "Bears", snap: "CHI -4.5", awayAbbr: "MIN", homeAbbr: "CHI" },
+      { id: "401872939", game: "Eagles @ Titans", when: "Sun 1:00 FOX", away: "Eagles", home: "Titans", h11: 19.59, h13: 14.73, i13: 4.85, model: "Eagles", snap: "PHI -7.0", awayAbbr: "PHI", homeAbbr: "TEN" },
+      { id: "401872946", game: "Steelers @ Patriots", when: "Sun 1:00 CBS", away: "Steelers", home: "Patriots", h11: 16.07, h13: 22.10, i13: -6.03, model: "Patriots", snap: "NE -5.5", awayAbbr: "PIT", homeAbbr: "NE" },
+      { id: "401872936", game: "Packers @ Jets", when: "Sun 1:00 FOX", away: "Packers", home: "Jets", h11: 19.17, h13: 14.12, i13: 5.05, model: "Packers", snap: "GB -3.5", awayAbbr: "GB", homeAbbr: "NYJ" },
+      { id: "401872935", game: "Browns @ Buccaneers", when: "Sun 1:00 CBS", away: "Browns", home: "Buccaneers", h11: 11.95, h13: 19.59, i13: -7.64, model: "Buccaneers", snap: "TB -8.5", awayAbbr: "CLE", homeAbbr: "TB" },
+      { id: "401872938", game: "Saints @ Ravens", when: "Sun 1:00 CBS", away: "Saints", home: "Ravens", h11: 15.16, h13: 23.14, i13: -7.97, model: "Ravens", snap: "BAL -8.5", awayAbbr: "NO", homeAbbr: "BAL" },
+      { id: "401872934", game: "Bengals @ Texans", when: "Sun 1:00 CBS", away: "Bengals", home: "Texans", h11: 16.89, h13: 21.17, i13: -4.28, model: "Texans", snap: "HOU -2.5", awayAbbr: "CIN", homeAbbr: "HOU" },
+      { id: "401872940", game: "Jaguars @ Broncos", when: "Sun 4:05 CBS", away: "Jaguars", home: "Broncos", h11: 14.56, h13: 19.89, i13: -5.34, model: "Broncos", snap: "DEN -2.5", awayAbbr: "JAX", homeAbbr: "DEN" },
+      { id: "401872941", game: "Raiders @ Chargers", when: "Sun 4:05 CBS", away: "Raiders", home: "Chargers", h11: 9.93, h13: 19.78, i13: -9.86, model: "Chargers", snap: "LAC -6.5", awayAbbr: "LV", homeAbbr: "LAC" },
+      { id: "401872943", game: "Seahawks @ Cardinals", when: "Sun 4:25 FOX", away: "Seahawks", home: "Cardinals", h11: 28.23, h13: 15.75, i13: 12.48, model: "Seahawks", snap: "SEA -3.5", awayAbbr: "SEA", homeAbbr: "ARI" },
+      { id: "401872944", game: "Commanders @ Cowboys", when: "Sun 4:25 FOX", away: "Commanders", home: "Cowboys", h11: 13.95, h13: 26.46, i13: -12.51, model: "Cowboys", snap: "DAL -4.5", awayAbbr: "WSH", homeAbbr: "DAL" },
+      { id: "401872942", game: "Dolphins @ 49ers", when: "Sun 4:25 FOX", away: "Dolphins", home: "49ers", h11: 16.72, h13: 24.27, i13: -7.55, model: "49ers", snap: "SF -13.5", awayAbbr: "MIA", homeAbbr: "SF" },
+      { id: "401872945", game: "Colts @ Chiefs", when: "Sun 8:20 NBC", away: "Colts", home: "Chiefs", h11: 17.56, h13: 18.01, i13: -0.45, model: "Chiefs", snap: "KC -6.5", awayAbbr: "IND", homeAbbr: "KC" },
+      { id: "401872947", game: "Giants @ Rams", when: "Mon 8:15 ESPN", away: "Giants", home: "Rams", h11: 14.96, h13: 23.04, i13: -8.08, model: "Rams", snap: "LAR -7.0", awayAbbr: "NYG", homeAbbr: "LAR" }
     ];
 
     function fmt(n) { return Number(n).toFixed(2); }
@@ -269,7 +266,7 @@
 
     render(null, false);
 
-    fetch("https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?week=1&seasontype=2")
+    fetch("https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?week=2&seasontype=2")
       .then(r => r.json())
       .then(data => {
         const map = {};
