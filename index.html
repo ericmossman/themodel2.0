@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Week 5 — Model vs Vegas</title>
+  <title>Week 6 — Model vs Vegas</title>
   <meta name="robots" content="noindex" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -202,15 +202,15 @@
 <body>
   <header>
     <div class="nav">
-      <div class="brand">Week Five <span>/</span> Model</div>
+      <div class="brand">Week Six <span>/</span> Model</div>
       <div class="status"><span class="live-dot" id="dot"></span><b id="feed">Connecting</b> · view only</div>
     </div>
   </header>
 
   <section class="hero">
-    <div class="kicker">2026 NFL Season · Week 5</div>
+    <div class="kicker">2026 NFL Season · Week 6</div>
     <h1>The Model versus.<br /><em>the live board.</em></h1>
-    <p class="lede">Week 5 NFL matchups. Risk adjusted prediction model.</p>
+    <p class="lede">Week 6 NFL matchups. Risk adjusted prediction model.</p>
     <div class="meta">
       <div>SPREADS - ESPN</div>
     </div>
@@ -241,21 +241,20 @@
 
   <script>
     const GAMES = [
-      { id: "401872980", away: "Buccaneers", home: "Cowboys", i13: -9.64, model: "Cowboys", snap: "DAL -8.5" },
-      { id: "401872981", away: "Eagles", home: "Jaguars", i13: 0.48, model: "Eagles", snap: "JAX -7.5" },
-      { id: "401872990", away: "Bears", home: "Packers", i13: -2.71, model: "Packers", snap: "CHI -2.5" },
-      { id: "401872984", away: "Texans", home: "Titans", i13: 7.74, model: "Texans", snap: "HOU -7.5" },
-      { id: "401872982", away: "Bengals", home: "Dolphins", i13: 7.03, model: "Bengals", snap: "CIN -6.5" },
-      { id: "401872986", away: "Raiders", home: "Patriots", i13: -12.30, model: "Patriots", snap: "NE -3.5" },
-      { id: "401872987", away: "Vikings", home: "Saints", i13: 3.63, model: "Vikings", snap: "MIN -2.5" },
-      { id: "401872983", away: "Browns", home: "Jets", i13: -1.51, model: "Jets", snap: "NYJ -2.5" },
-      { id: "401872985", away: "Colts", home: "Steelers", i13: -1.54, model: "Steelers", snap: "PIT -2.5" },
-      { id: "401872988", away: "Giants", home: "Commanders", i13: 1.40, model: "Giants", snap: "WSH -3.5" },
-      { id: "401872989", away: "Broncos", home: "Chargers", i13: 4.36, model: "Broncos", snap: "DEN -3.5" },
-      { id: "401872991", away: "Lions", home: "Cardinals", i13: 9.14, model: "Lions", snap: "DET -5.5" },
-      { id: "401872992", away: "49ers", home: "Seahawks", i13: -4.28, model: "Seahawks", snap: "SEA -3.0" },
-      { id: "401872993", away: "Ravens", home: "Falcons", i13: 3.14, model: "Ravens", snap: "ATL -3.0" },
-      { id: "401872994", away: "Bills", home: "Rams", i13: -4.92, model: "Rams", snap: "LAR -3.0" }
+      { id: "401872995", away: "Seahawks", home: "Broncos", i13: 0.04, model: "Seahawks", snap: "SEA -2.5" },
+      { id: "401872996", away: "Texans", home: "Jaguars", i13: 2.75, model: "Texans", snap: "JAX -2.5" },
+      { id: "401872999", away: "Bears", home: "Falcons", i13: 0.51, model: "Bears", snap: "CHI -1.5" },
+      { id: "401872997", away: "Ravens", home: "Browns", i13: 6.41, model: "Ravens", snap: "BAL -3.5" },
+      { id: "401873003", away: "Titans", home: "Colts", i13: -11.55, model: "Colts", snap: "IND -7.0" },
+      { id: "401873001", away: "Jets", home: "Patriots", i13: -11.99, model: "Patriots", snap: "NE -7.5" },
+      { id: "401873000", away: "Saints", home: "Giants", i13: -3.60, model: "Giants", snap: "NO -1.5" },
+      { id: "401872998", away: "Panthers", home: "Eagles", i13: -0.64, model: "Eagles", snap: "CAR -3.5" },
+      { id: "401873002", away: "Steelers", home: "Buccaneers", i13: 5.06, model: "Steelers", snap: "PIT -2.5" },
+      { id: "401873004", away: "Cardinals", home: "Rams", i13: -12.91, model: "Rams", snap: "LAR -12.5" },
+      { id: "401873006", away: "Chargers", home: "Chiefs", i13: -6.80, model: "Chiefs", snap: "KC -8.5" },
+      { id: "401873005", away: "Bills", home: "Raiders", i13: 12.57, model: "Bills", snap: "BUF -4.5" },
+      { id: "401873007", away: "Cowboys", home: "Packers", i13: 1.28, model: "Cowboys", snap: "GB -1.5" },
+      { id: "401873008", away: "Commanders", home: "49ers", i13: -5.12, model: "49ers", snap: "SF -7.5" }
     ];
 
     function fmt(n) { return Number(n).toFixed(2); }
