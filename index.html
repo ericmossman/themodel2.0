@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Week 10 — Model vs Vegas</title>
+  <title>Week 11 — Model vs Vegas</title>
   <meta name="robots" content="noindex" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -162,6 +162,7 @@
       padding-left: 2px;
       padding-right: 8px;
       white-space: nowrap;
+      line-height: 1.2;
     }
     td.col-vegas { font-size: 12px; }
     .minus { color: #ff6b6b; }
@@ -202,15 +203,15 @@
 <body>
   <header>
     <div class="nav">
-      <div class="brand">Week Ten <span>/</span> Model</div>
+      <div class="brand">Week Eleven <span>/</span> Model</div>
       <div class="status"><span class="live-dot" id="dot"></span><b id="feed">Connecting</b> · view only</div>
     </div>
   </header>
 
   <section class="hero">
-    <div class="kicker">2026 NFL Season · Week 10</div>
+    <div class="kicker">2026 NFL Season · Week 11</div>
     <h1>The Model versus.<br /><em>the live board.</em></h1>
-    <p class="lede">Week 10 NFL matchups. Risk adjusted prediction model.</p>
+    <p class="lede">Week 11 NFL matchups. Risk adjusted prediction model.</p>
     <div class="meta">
       <div>SPREADS - ESPN</div>
     </div>
@@ -226,7 +227,7 @@
               <th class="sticky">Matchup</th>
               <th class="col-diff">model<br />diff.</th>
               <th class="col-pick">Model<br />Pick</th>
-              <th class="col-vegas">Vegas</th>
+              <th class="col-vegas">Vegas<br />Pick</th>
             </tr>
           </thead>
           <tbody id="rows"></tbody>
@@ -241,23 +242,43 @@
 
   <script>
     const GAMES = [
-      { id: "401873052", away: "Commanders", home: "Giants", i13: -7.76, model: "Giants", snap: "NYG" },
-      { id: "401873053", away: "Patriots", home: "Lions", i13: -2.07, model: "Lions", snap: "DET" },
-      { id: "401873059", away: "Dolphins", home: "Colts", i13: -1.09, model: "Colts", snap: "IND -4.5" },
-      { id: "401873058", away: "Chiefs", home: "Falcons", i13: 14.79, model: "Chiefs", snap: "KC -3.0" },
-      { id: "401873057", away: "Jaguars", home: "Titans", i13: 9.96, model: "Jaguars", snap: "JAX -10.5" },
-      { id: "401873056", away: "Texans", home: "Browns", i13: 2.80, model: "Texans", snap: "HOU -4.5" },
-      { id: "401873054", away: "Bills", home: "Jets", i13: 12.07, model: "Bills", snap: "BUF -8.5" },
-      { id: "401873055", away: "Panthers", home: "Saints", i13: 1.91, model: "Panthers", snap: "NO -1.5" },
-      { id: "401873060", away: "Vikings", home: "Packers", i13: 1.98, model: "Vikings", snap: "GB -2.5" },
-      { id: "401873061", away: "Rams", home: "Cardinals", i13: 13.21, model: "Rams", snap: "LAR -9.5" },
-      { id: "401873062", away: "Seahawks", home: "Raiders", i13: 5.38, model: "Seahawks", snap: "SEA -6.5" },
-      { id: "401873063", away: "49ers", home: "Cowboys", i13: 11.85, model: "49ers", snap: "SF -4.5" },
-      { id: "401873064", away: "Steelers", home: "Bengals", i13: 1.52, model: "Steelers", snap: "CIN -3.5" },
-      { id: "401873065", away: "Chargers", home: "Ravens", i13: -0.10, model: "Ravens", snap: "BAL -4.5" }
+      { id: "401873066", away: "Colts", home: "Texans", i13: -4.18, model: "Texans", snap: "HOU -12.5" },
+      { id: "401873070", away: "Dolphins", home: "Bills", i13: -11.43, model: "Bills", snap: "BUF -16.5" },
+      { id: "401873072", away: "Buccaneers", home: "Lions", i13: -4.53, model: "Lions", snap: "DET -7" },
+      { id: "401873076", away: "Steelers", home: "Eagles", i13: 9.34, model: "Steelers", snap: "PIT -4.5" },
+      { id: "401873071", away: "Saints", home: "Bears", i13: -8.49, model: "Bears", snap: "CHI -11.5" },
+      { id: "401873068", away: "Ravens", home: "Panthers", i13: -4.33, model: "Panthers", snap: "CAR -2.5" },
+      { id: "401873073", away: "Titans", home: "Cowboys", i13: -4.15, model: "Cowboys", snap: "DAL -8.5" },
+      { id: "401873067", away: "Cardinals", home: "Chiefs", i13: -18.20, model: "Chiefs", snap: "KC -15.5" },
+      { id: "401873074", away: "Jets", home: "Chargers", i13: -1.78, model: "Chargers", snap: "LAC -3" },
+      { id: "401873075", away: "Raiders", home: "Broncos", i13: -3.44, model: "Broncos", snap: "DEN -10" },
+      { id: "401873069", away: "Jaguars", home: "Giants", i13: 0.97, model: "Jaguars", snap: "JAX -6" },
+      { id: "401873077", away: "Vikings", home: "49ers", i13: -5.28, model: "49ers", snap: "SF -3" },
+      { id: "401873078", away: "Bengals", home: "Commanders", i13: 7.62, model: "Bengals", snap: "CIN -6.5" }
     ];
 
+    const ABBR_TO_NAME = {
+      HOU: "Texans", BUF: "Bills", DET: "Lions", PIT: "Steelers", CHI: "Bears",
+      CAR: "Panthers", DAL: "Cowboys", KC: "Chiefs", LAC: "Chargers", DEN: "Broncos",
+      JAX: "Jaguars", SF: "49ers", CIN: "Bengals",
+      IND: "Colts", MIA: "Dolphins", TB: "Buccaneers", NO: "Saints", BAL: "Ravens",
+      TEN: "Titans", ARI: "Cardinals", NYJ: "Jets", LV: "Raiders", NYG: "Giants",
+      MIN: "Vikings", WAS: "Commanders", PHI: "Eagles"
+    };
+
     function fmt(n) { return Number(n).toFixed(2); }
+
+    function formatVegas(vegasStr) {
+      if (!vegasStr) return "";
+      const match = vegasStr.match(/^([A-Z]{2,3})\s*([+-]?\d+\.?\d*)/);
+      if (match) {
+        const abbr = match[1];
+        const spread = match[2];
+        const name = ABBR_TO_NAME[abbr] || abbr;
+        return `${name} ${spread}`;
+      }
+      return vegasStr;
+    }
 
     function render(liveMap, liveOk) {
       document.getElementById("dot").classList.toggle("off", !liveOk);
@@ -266,18 +287,19 @@
       body.innerHTML = GAMES.map(g => {
         const vegas = (liveMap && liveMap[g.id]) || g.snap;
         const diff = -Math.abs(Number(g.i13));
+        const vegasDisplay = formatVegas(vegas);
         return `<tr>
           <td class="sticky"><div class="game">${g.away}<span class="at">at</span><span class="home">${g.home}</span></div></td>
           <td class="num minus col-diff">${fmt(diff)}</td>
           <td class="col-pick"><span class="pill">${g.model}</span></td>
-          <td class="vegas col-vegas">${vegas}</td>
+          <td class="vegas col-vegas">${vegasDisplay}</td>
         </tr>`;
       }).join("");
     }
 
     render(null, false);
 
-    fetch("https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?week=3&seasontype=2")
+    fetch("https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?week=11&seasontype=2")
       .then(r => r.json())
       .then(data => {
         const map = {};
